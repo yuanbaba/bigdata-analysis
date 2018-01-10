@@ -1,7 +1,8 @@
-import  react,{component} from 'react'
-import  {render} from 'react-dom'
+import  react,{Component} from 'react';
+import {render} from 'react-dom';
+import './index.css';
 
-export default class Index extends Comment{
+export default class Index extends Component{
     constructor(props){
         super(props);
     }

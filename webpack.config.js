@@ -4,19 +4,21 @@ const HtmlWebpackPlugin  = require('html-webpack-plugin');
 const BASE_PATH = path.resolve(__dirname);
 const BUILD_PATH = path.resolve(BASE_PATH,'build');
 const SRC_PATH = path.resolve(BASE_PATH,'src');
-const TEMPLATE_PATH = path.resolve(SRC_PATH,'templates');
+const TEMPLATE_PATH = path.resolve(BASE_PATH,'templates');
 // const env = process.env.NODE_ENV;
 
 module.exports = {
     entry:{
-        index:path.resolve(SRC_PATH,'./index/Index.jsx')
+        index:path.resolve(SRC_PATH,'./index/Index.jsx'),
+        login:path.resolve(SRC_PATH,'./login/Login.jsx')
     },
     output:{
         path:BUILD_PATH,
         filename:'[name].js'
     },
     externals:{
-
+        "react":"React",
+        "react-dom":"ReactDOM",
     },
     module:{
         loaders:[
@@ -26,10 +28,10 @@ module.exports = {
                 loader:'babel-loader'
             },{
                 test:/\.scss$/,
-                loaders:['style','css','sass']
+                loaders:['style-loader','css-loader','sass-loader']
             },{
                 test:/\.css$/,
-                loaders:['style','css']
+                loaders:['style-loader','css-loader']
             },{
                 test:/\.(.png|jpg|jpeg|gif|bmp)$/,
                 loader:'url-loader'
@@ -37,16 +39,22 @@ module.exports = {
         ]
     },
     plugins:[
-        new webpack.optimize.UglifyJsPlugin({
-            compress:{
-                warnings:false
-            }
-        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress:{
+        //         warnings:false
+        //     }
+        // }),
         new HtmlWebpackPlugin({
             title:'首页',
-            temlate:path.resolve(TEMPLATE_PATH,'template.html'),
+            template:path.resolve(TEMPLATE_PATH,'common.html'),
             chunks:['index'],
             filename:'index.html'
+        }),
+        new HtmlWebpackPlugin({
+            title:'登录',
+            template:path.resolve(TEMPLATE_PATH,'common.html'),
+            chunks:['login'],
+            filename:'login.html'
         })
     ]
 }

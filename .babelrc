@@ -5,7 +5,6 @@
     "react"
   ],
   "plugins": [
-    "transform-runtime",
-    ["import",{"style":"css","libraryName":"antd"}]
+    "transform-runtime"
   ]
 }
