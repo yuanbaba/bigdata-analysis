@@ -1,0 +1,36 @@
+{
+  "name": "big-data-analysis-platform",
+  "version": "1.0.0",
+  "description": "Real-time analysis platform of big data based on flow processing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-dev": "webpack --config ./webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuanbaba/graduation.git"
+  },
+  "keywords": [
+    "real-time",
+    "flow",
+    "processing",
+    "big-data",
+    "analysis"
+  ],
+  "author": "yuanjun",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "antd": "^3.1.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "html-webpack-plugin": "^2.30.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0"
+  }
+}
