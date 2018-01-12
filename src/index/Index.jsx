@@ -1,5 +1,6 @@
 import  react,{Component} from 'react';
-import {render} from 'react-dom';
+import  {render} from 'react-dom';
+import  Header from '../components/header/Header.jsx';
 import './index.css';
 
 export default class Index extends Component{
@@ -8,7 +9,9 @@ export default class Index extends Component{
     }
     render(){
         return (
-            <div className="main"></div>
+            <div className="main">
+                <Header isLogin={false}/>
+            </div>
         )
     }
 }
