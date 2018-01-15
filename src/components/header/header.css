@@ -22,3 +22,20 @@
     line-height       :  100%;
     height            :  100%;
 }
+.header:after{
+    display           :  block;
+    height            :  0;
+    content           :  '\0020';
+    clear             :  both;
+}
+.header{
+    zoom              :  1;
+}
+.login-header a{
+    line-height       :  50px;
+    height            :  50px;
+}
+.index-header a{
+    line-height       :  40px;
+    height            :  40px;
+}

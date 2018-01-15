@@ -8,9 +8,13 @@ export default class Header extends Component{
     }
     render(){
         return(
-            <div className="header" style={this.props.isLogin?{height:'50px',lineHeight:'50px'}:{height:'40px',lineHeight:'40px'}}>
-                <a href="./index.html"><span style={this.props.isLogin?{lineHeight:'50px'}:{lineHeight:'40px'}}>首页</span></a>
-            </div>
+            this.props.isLogin ?
+                <div className="header login-header">
+                    <a href="./index.html"><span>首页</span></a>
+                </div>
+                :<div className="header login-header">
+                    <a href="./login"><span>登录</span></a>
+                </div>
         )
     }
 }

@@ -2,16 +2,18 @@ class IndexAPI{
     constructor(){
 
     }
-    login = param => {
+    /**
+     *  登录
+     *  param:username,pwd
+     * */
+    login = (param) =>{
         return new Promise((resolve,reject)=>{
             try{
                 resolve(param);
-            }catch (e){
+            }catch(e){
                 reject(e);
             }
-
         })
-
     }
 }
 module.exports = new IndexAPI();
